@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎮 Solo Leveling System V3 🎮</title>
     <style>
+        :root {
+            --bg-color: #1a1b26;
+            --primary-text: #c0caf5;
+            /* Sky blue */
+            --secondary-text: #7aa2f7;
+            --accent-color: #bb9af7;
+            --toggle-active: #5fb3ff;
+            --border-color: #414868;
+            --bg-color2: #24283b;
+            --secondary-accent: #565f89;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +26,8 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #1a1b26;
-            color: #c0caf5;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
             line-height: 1.6;
         }
 
@@ -32,28 +44,28 @@
 
         .header h1 {
             font-size: 2.5rem;
-            color: #7aa2f7;
+            color: var(--secondary-text);
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .overall-level {
-            background-color: #24283b;
+            background-color: var(--bg-color2);
             padding: 15px;
             border-radius: 10px;
-            border: 2px solid #414868;
+            border: 2px solid var(--border-color);
             margin-bottom: 20px;
         }
 
         .overall-level h2 {
-            color: #bb9af7;
+            color: var(--accent-color);
             font-size: 1.5rem;
             text-align: center;
         }
 
         .tabs {
             display: flex;
-            background-color: #24283b;
+            background-color: var(--bg-color2);
             border-radius: 10px 10px 0 0;
             overflow: hidden;
             margin-bottom: 0;
@@ -62,8 +74,8 @@
         .tab-button {
             flex: 1;
             padding: 15px;
-            background-color: #414868;
-            color: #c0caf5;
+            background-color: var(--border-color);
+            color: var(--primary-text);
             border: none;
             cursor: pointer;
             font-size: 1rem;
@@ -71,20 +83,20 @@
         }
 
         .tab-button:hover {
-            background-color: #565f89;
+            background-color: var(--secondary-accent);
         }
 
         .tab-button.active {
-            background-color: #7aa2f7;
-            color: #1a1b26;
+            background-color: var(--secondary-text);
+            color: var(--bg-color);
         }
 
         .tab-content {
-            background-color: #24283b;
+            background-color: var(--bg-color2);
             border-radius: 0 0 10px 10px;
             padding: 20px;
             min-height: 500px;
-            border: 2px solid #414868;
+            border: 2px solid var(--border-color);
             border-top: none;
         }
 
@@ -97,15 +109,15 @@
         }
 
         .attribute-section {
-            background-color: #414868;
+            background-color: var(--border-color);
             margin-bottom: 20px;
             border-radius: 10px;
             padding: 20px;
-            border: 1px solid #565f89;
+            border: 1px solid var(--secondary-accent);
         }
 
         .attribute-header {
-            color: #bb9af7;
+            color: var(--accent-color);
             font-size: 1.3rem;
             font-weight: bold;
             margin-bottom: 15px;
@@ -119,7 +131,7 @@
         }
 
         .skill-item {
-            background-color: #24283b;
+            background-color: var(--bg-color2);
             padding: 10px;
             border-radius: 5px;
             display: flex;
@@ -132,7 +144,7 @@
         }
 
         .skill-level {
-            color: #7aa2f7;
+            color: var(--secondary-text);
             font-weight: bold;
         }
 
@@ -151,7 +163,7 @@
             align-items: center;
             margin-bottom: 10px;
             padding: 5px;
-            background-color: #414868;
+            background-color: var(--border-color);
             border-radius: 5px;
         }
 
@@ -161,7 +173,7 @@
         }
 
         .current-level {
-            color: #7aa2f7;
+            color: var(--secondary-text);
             font-weight: bold;
             margin: 0 10px;
             min-width: 40px;
@@ -170,16 +182,16 @@
         .update-skill input {
             width: 60px;
             padding: 5px;
-            background-color: #1a1b26;
-            border: 1px solid #565f89;
+            background-color: var(--bg-color);
+            border: 1px solid var(--secondary-accent);
             border-radius: 3px;
-            color: #c0caf5;
+            color: var(--primary-text);
             text-align: center;
         }
 
         .button {
-            background-color: #414868;
-            color: #c0caf5;
+            background-color: var(--border-color);
+            color: var(--primary-text);
             padding: 12px 24px;
             border: none;
             border-radius: 5px;
@@ -190,12 +202,12 @@
         }
 
         .button:hover {
-            background-color: #565f89;
+            background-color: var(--secondary-accent);
         }
 
         .button.primary {
-            background-color: #7aa2f7;
-            color: #1a1b26;
+            background-color: var(--secondary-text);
+            color: var(--bg-color);
         }
 
         .button.primary:hover {
@@ -204,17 +216,17 @@
 
         .button.success {
             background-color: #9ece6a;
-            color: #1a1b26;
+            color: var(--bg-color);
         }
 
         .button.danger {
             background-color: #f7768e;
-            color: #1a1b26;
+            color: var(--bg-color);
         }
 
         .button.crystal {
-            background-color: #bb9af7;
-            color: #1a1b26;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
         }
 
         .chart-container {
@@ -229,7 +241,7 @@
         .history-table {
             width: 100%;
             border-collapse: collapse;
-            background-color: #414868;
+            background-color: var(--border-color);
             border-radius: 5px;
             overflow: hidden;
         }
@@ -238,12 +250,12 @@
         .history-table td {
             padding: 12px;
             text-align: left;
-            border-bottom: 1px solid #565f89;
+            border-bottom: 1px solid var(--secondary-accent);
         }
 
         .history-table th {
-            background-color: #7aa2f7;
-            color: #1a1b26;
+            background-color: var(--secondary-text);
+            color: var(--bg-color);
             font-weight: bold;
         }
 
@@ -259,10 +271,10 @@
         }
 
         .modal-content {
-            background-color: #24283b;
+            background-color: var(--bg-color2);
             margin: 5% auto;
             padding: 30px;
-            border: 2px solid #414868;
+            border: 2px solid var(--border-color);
             border-radius: 15px;
             width: 90%;
             max-width: 800px;
@@ -276,7 +288,7 @@
         }
 
         .modal-header h2 {
-            color: #bb9af7;
+            color: var(--accent-color);
             font-size: 1.8rem;
         }
 
@@ -298,16 +310,16 @@
         }
 
         .date-input input {
-            background-color: #1a1b26;
-            border: 1px solid #565f89;
+            background-color: var(--bg-color);
+            border: 1px solid var(--secondary-accent);
             border-radius: 5px;
             padding: 8px;
-            color: #c0caf5;
+            color: var(--primary-text);
             margin-left: 10px;
         }
 
         .progress-bar {
-            background-color: #1a1b26;
+            background-color: var(--bg-color);
             border-radius: 10px;
             overflow: hidden;
             margin: 5px 0;
@@ -315,22 +327,22 @@
 
         .progress-fill {
             height: 20px;
-            background-color: #7aa2f7;
+            background-color: var(--secondary-text);
             transition: width 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #1a1b26;
+            color: var(--bg-color);
             font-weight: bold;
             font-size: 0.8rem;
         }
 
         .crystal-instructions {
-            background-color: #414868;
+            background-color: var(--border-color);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border-left: 4px solid #bb9af7;
+            border-left: 4px solid var(--accent-color);
         }
 
         .crystal-rating {
@@ -344,7 +356,7 @@
         .crystal-skill {
             display: flex;
             align-items: center;
-            background-color: #414868;
+            background-color: var(--border-color);
             padding: 10px;
             border-radius: 5px;
         }
@@ -357,10 +369,10 @@
         .crystal-skill input {
             width: 80px;
             padding: 8px;
-            background-color: #1a1b26;
-            border: 1px solid #565f89;
+            background-color: var(--bg-color);
+            border: 1px solid var(--secondary-accent);
             border-radius: 3px;
-            color: #c0caf5;
+            color: var(--primary-text);
             text-align: center;
         }
 
@@ -820,7 +832,7 @@
 
                 const header = document.createElement('h3');
                 header.textContent = attrName;
-                header.style.color = '#7aa2f7';
+                header.style.color = 'var(--secondary-text)';
                 header.style.marginBottom = '10px';
                 section.appendChild(header);
 
@@ -933,23 +945,23 @@
                 const y = chartTop + chartHeight - barHeight;
 
                 // Draw bar
-                ctx.fillStyle = ['#7aa2f7', '#f7768e', '#9ece6a', '#e0af68', '#bb9af7'][index % 5];
+                ctx.fillStyle = ['var(--secondary-text)', '#f7768e', '#9ece6a', '#e0af68', 'var(--accent-color)'][index % 5];
                 ctx.fillRect(x, y, barWidth, barHeight);
 
                 // Draw label
-                ctx.fillStyle = '#c0caf5';
+                ctx.fillStyle = 'var(--primary-text)';
                 ctx.font = '12px Arial';
                 ctx.textAlign = 'center';
                 ctx.fillText(formatAttributeName(attr), x + barWidth / 2, chartTop + chartHeight + 20);
 
                 // Draw value
-                ctx.fillStyle = '#c0caf5';
+                ctx.fillStyle = 'var(--primary-text)';
                 ctx.font = 'bold 14px Arial';
                 ctx.fillText(level.toString(), x + barWidth / 2, y - 5);
             });
 
             // Draw title
-            ctx.fillStyle = '#7aa2f7';
+            ctx.fillStyle = 'var(--secondary-text)';
             ctx.font = 'bold 18px Arial';
             ctx.textAlign = 'center';
             ctx.fillText('📊 Attribute Levels', canvas.width / 2, 30);
@@ -966,7 +978,7 @@
             const sessions = getSessions().slice(-10); // Last 10 sessions
 
             if (sessions.length === 0) {
-                ctx.fillStyle = '#c0caf5';
+                ctx.fillStyle = 'var(--primary-text)';
                 ctx.font = '16px Arial';
                 ctx.textAlign = 'center';
                 ctx.fillText('No session data available', canvas.width / 2, canvas.height / 2);
@@ -987,7 +999,7 @@
             });
 
             // Draw grid lines
-            ctx.strokeStyle = '#414868';
+            ctx.strokeStyle = 'var(--border-color)';
             ctx.lineWidth = 1;
             for (let i = 0; i <= 5; i++) {
                 const y = chartTop + (i / 5) * chartHeight;
@@ -998,7 +1010,7 @@
             }
 
             // Draw line
-            ctx.strokeStyle = '#7aa2f7';
+            ctx.strokeStyle = 'var(--secondary-text)';
             ctx.lineWidth = 2;
             ctx.beginPath();
             points.forEach((point, index) => {
@@ -1019,7 +1031,7 @@
             });
 
             // Draw title
-            ctx.fillStyle = '#7aa2f7';
+            ctx.fillStyle = 'var(--secondary-text)';
             ctx.font = 'bold 18px Arial';
             ctx.textAlign = 'center';
             ctx.fillText('📈 Progress Over Time', canvas.width / 2, 30);
@@ -1061,30 +1073,30 @@
                 const barWidth = (skill.level / 100) * maxWidth;
 
                 // Color based on level
-                let color = '#414868';
+                let color = 'var(--border-color)';
                 if (skill.level >= 80) color = '#9ece6a';
                 else if (skill.level >= 60) color = '#e0af68';
-                else if (skill.level >= 40) color = '#7aa2f7';
-                else if (skill.level >= 20) color = '#bb9af7';
+                else if (skill.level >= 40) color = 'var(--secondary-text)';
+                else if (skill.level >= 20) color = 'var(--accent-color)';
 
                 // Draw bar
                 ctx.fillStyle = color;
                 ctx.fillRect(150, y, barWidth, barHeight);
 
                 // Draw skill name
-                ctx.fillStyle = '#c0caf5';
+                ctx.fillStyle = 'var(--primary-text)';
                 ctx.font = '12px Arial';
                 ctx.textAlign = 'right';
                 ctx.fillText(skill.name, 145, y + 15);
 
                 // Draw level
-                ctx.fillStyle = '#c0caf5';
+                ctx.fillStyle = 'var(--primary-text)';
                 ctx.textAlign = 'left';
                 ctx.fillText(skill.level.toString(), 155 + barWidth, y + 15);
             });
 
             // Draw title
-            ctx.fillStyle = '#7aa2f7';
+            ctx.fillStyle = 'var(--secondary-text)';
             ctx.font = 'bold 18px Arial';
             ctx.textAlign = 'center';
             ctx.fillText('🎯 Top Skills Overview', canvas.width / 2, 30);
@@ -1099,7 +1111,7 @@
 
             if (sessions.length === 0) {
                 const row = tbody.insertRow();
-                row.innerHTML = '<td colspan="4" style="text-align: center; color: #565f89;">No session history available</td>';
+                row.innerHTML = '<td colspan="4" style="text-align: center; color: var(--secondary-accent);">No session history available</td>';
                 return;
             }
 
